@@ -76,7 +76,31 @@ packstack --allinone
 <img src="https://github.com/user-attachments/assets/3794771b-6e19-4da9-9001-67f7d6e0b14e"/>
 <img src="https://github.com/user-attachments/assets/8aa25662-5119-4de6-a313-088c45a1ed84"/>
 
-<br/> To solve this I will <br/>
+<br/> To solve this I will run the following: <br/>
+
+```Bash
+# Disable the NetworkManager service
+systemctl disable NetworkManager
+# Enable the crb repo
+dnf config-manager --set-enabled crb
+# Rebuild the DNF cache and update repos
+dnf clean all && dnf makecache
+# Install pyxattr
+dnf install -y python3-pyxattr
+# Install openstack glance
+dnf install -y openstack-glance
+# Reinitiate the build (will be unique)
+packstack --answer-file /root/packstack-answers-20241020-180438.txt
+
+```
+
+
+<img src="https://github.com/user-attachments/assets/2ecabda8-1b91-4969-8d55-72bda3fea271"/>
+<img src="https://github.com/user-attachments/assets/381d811a-1ac9-480d-887e-5f504ed5fc8b"/>
+<img src=""/>
+
+
+
 
 
 ## Step 4:
