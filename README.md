@@ -24,7 +24,7 @@ Bash
 - Remove epel-release to avoid package conflicts
 - At least 6GB RAM, 20GB Disk Space, 3-4 CPU cores (recommended)
 
-## Step 1: Install Packstack
+## Step 1: Install OpenStack
 
 ```Bash
 # View available openstack versions
@@ -46,27 +46,31 @@ yum update -y
 ```Bash
 sudo yum remove ansible ansible-core
 sudo yum update -y
-sudo yum install ansible
 ```
 
 <br/> Result: <br/>
-<img src=""/>
+<img src="https://github.com/user-attachments/assets/9af41849-c4f9-40b8-b1ff-316833c066dc"/>
 
-## Step 2:
-
-```Bash
-
-```
-
-<img src=""/>
-
-## Step 3:
+## Step 2: Install PackStack
 
 ```Bash
-
+# Install packstack
+yum install -y openstack-packstack
+# Verify packstack installation
+rpm -qa | grep packstack
 ```
 
-<img src=""/>
+<img src="https://github.com/user-attachments/assets/7521d3d4-9ca7-4d4c-a2fa-459a3a612bfe"/>
+<img src="https://github.com/user-attachments/assets/71dde2a1-de61-4137-842e-4ea7e8e90fcc"/>
+
+## Step 3: Run the PackStack installer
+
+```Bash
+# Use PackStack to create OpenStack
+packstack --allinone
+```
+
+<img src="https://github.com/user-attachments/assets/8a454f0c-fb62-48e7-a18c-a37b3c3f5413"/>
 
 ## Step 4:
 
