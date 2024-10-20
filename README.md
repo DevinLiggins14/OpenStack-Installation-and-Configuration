@@ -71,6 +71,13 @@ packstack --allinone
 ```
 
 <img src="https://github.com/user-attachments/assets/8a454f0c-fb62-48e7-a18c-a37b3c3f5413"/>
+<br/> The build has been completed but there are errors and the UI is inaccessable <br/>
+
+<img src="https://github.com/user-attachments/assets/3794771b-6e19-4da9-9001-67f7d6e0b14e"/>
+<img src="https://github.com/user-attachments/assets/8aa25662-5119-4de6-a313-088c45a1ed84"/>
+
+<br/> To solve this I will <br/>
+
 
 ## Step 4:
 
