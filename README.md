@@ -169,8 +169,7 @@ openstack endpoint list
 <img src="https://github.com/user-attachments/assets/e56904d4-3c85-434c-a7b1-cdd827217609"/>
 <img src="https://github.com/user-attachments/assets/8eec8e27-d957-47f2-a5e1-eecbf97733ba"/>
 <img src="https://github.com/user-attachments/assets/5a7f4007-963d-462a-9baa-c7cb61a99ec6"/>
-
-
+<img src="https://github.com/user-attachments/assets/9de9eada-5bb0-447f-8ec1-e9eb93290b37"/>
 
 
 
