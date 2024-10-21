@@ -104,7 +104,7 @@ packstack --answer-file /root/packstack-answers-20241020-180438.txt
 ```Bash
 # Stop the httpd service
 systemctl stop httpd
-# Reset the password (ip address is unqiue
+# Reset the password (ip address is unique)
 keystone-manage bootstrap --bootstrap-password 'admin' --bootstrap-admin-url http://192.168.1.186:5000/v3/ --bootstrap-internal-url http://192.168.1.186:5000/v3/ --bootstrap-public-url http://192.168.1.186:5000/v3/ --bootstrap-region-id RegionOne
 # Update and Source keystonerc_admin
 vi ~/keystonerc_admin
@@ -116,13 +116,3 @@ systemctl start httpd
 <img src="https://github.com/user-attachments/assets/cb05833f-58e4-4fab-92f9-558f2a4c54fa"/>
 <img src="https://github.com/user-attachments/assets/a76fc557-7ed2-40ed-9676-6564e1fab068"/>
 <br/> The UI is now accessable with the password admin!<br/>
-
-
-
-## Step 4:
-
-```Bash
-
-```
-
-<img src=""/>
