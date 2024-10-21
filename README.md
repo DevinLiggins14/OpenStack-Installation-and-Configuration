@@ -97,7 +97,7 @@ packstack --answer-file /root/packstack-answers-20241020-180438.txt
 
 <img src="https://github.com/user-attachments/assets/2ecabda8-1b91-4969-8d55-72bda3fea271"/>
 <img src="https://github.com/user-attachments/assets/381d811a-1ac9-480d-887e-5f504ed5fc8b"/>
-<img src=""/>
+<img src="https://github.com/user-attachments/assets/5bb52f9f-d346-4b26-b5d1-fad4f72afd1a"/>
 
 
 
