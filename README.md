@@ -116,3 +116,65 @@ systemctl start httpd
 <img src="https://github.com/user-attachments/assets/cb05833f-58e4-4fab-92f9-558f2a4c54fa"/>
 <img src="https://github.com/user-attachments/assets/a76fc557-7ed2-40ed-9676-6564e1fab068"/>
 <br/> The UI is now accessable with the password admin!<br/>
+
+## Step 4: Create a project
+
+
+
+```Bash
+# To avoid an auth-url error source the keystonerc_admin dir
+source ~/keystonerc_admin
+# Verify necessary variables
+env | grep OS_
+# Create the project
+openstack project create --domain default --description "Demo Project" demo_project
+```
+
+
+<img src="https://github.com/user-attachments/assets/681a9fc0-c21c-4ec5-87f7-e6275fadc84e"/>
+<br/> Verify in the UI: <br/>
+<img src="https://github.com/user-attachments/assets/b0c3117d-7a97-4c14-b56b-326290054a50"/>
+
+## Step 5: Create a user and assign a role
+
+```Bash
+# Create a user
+openstack user create --domain default --password 'password123' demo_user
+# Assign a role to the demo user
+openstack role add --project demo_project --user demo_user member
+```
+
+<img src="https://github.com/user-attachments/assets/fb850884-7781-4509-801f-a5dd4449090c"/>
+
+<br/> Verify: <br/>
+<img src="https://github.com/user-attachments/assets/02cdef3c-ac4a-4531-8e7d-dc770e09652d"/>
+<img src="https://github.com/user-attachments/assets/604ee1a6-7397-47e3-b6b1-fc9c730b4653"/>
+
+## Step 6: Glance Service Registration and Endpoint Verification 
+
+```Bash
+# Create the "services" project
+openstack project create --domain default --description "Services Project" services
+# Register the Glance Service
+openstack service create --name glance --description "OpenStack Image Service" image
+# Create Endpoints for Glance
+openstack endpoint create --region RegionOne image public http://192.168.1.186:9292/v3
+openstack endpoint create --region RegionOne image internal http://192.168.1.186:9292/v3
+openstack endpoint create --region RegionOne image admin http://192.168.1.186:9292/v3
+# Verify Endpoints
+openstack endpoint list --service image
+openstack endpoint list
+```
+
+<img src="https://github.com/user-attachments/assets/e56904d4-3c85-434c-a7b1-cdd827217609"/>
+<img src="https://github.com/user-attachments/assets/8eec8e27-d957-47f2-a5e1-eecbf97733ba"/>
+<img src="https://github.com/user-attachments/assets/5a7f4007-963d-462a-9baa-c7cb61a99ec6"/>
+
+
+
+
+
+
+
+
+
