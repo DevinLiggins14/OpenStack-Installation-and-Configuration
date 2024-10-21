@@ -98,8 +98,24 @@ packstack --answer-file /root/packstack-answers-20241020-180438.txt
 <img src="https://github.com/user-attachments/assets/2ecabda8-1b91-4969-8d55-72bda3fea271"/>
 <img src="https://github.com/user-attachments/assets/381d811a-1ac9-480d-887e-5f504ed5fc8b"/>
 <img src="https://github.com/user-attachments/assets/5bb52f9f-d346-4b26-b5d1-fad4f72afd1a"/>
+<br/> But now we must configure the password: <br/>
+<img src="https://github.com/user-attachments/assets/2ce9197d-0cc8-4725-ac3f-127ff8c0e1eb"/>
 
+```Bash
+# Stop the httpd service
+systemctl stop httpd
+# Reset the password (ip address is unqiue
+keystone-manage bootstrap --bootstrap-password 'admin' --bootstrap-admin-url http://192.168.1.186:5000/v3/ --bootstrap-internal-url http://192.168.1.186:5000/v3/ --bootstrap-public-url http://192.168.1.186:5000/v3/ --bootstrap-region-id RegionOne
+# Update and Source keystonerc_admin
+vi ~/keystonerc_admin
+# Start the http service
+systemctl start httpd
+```
 
+<img src="https://github.com/user-attachments/assets/7cfabaf7-0c1a-4afc-a41b-f2e38bb6ec40"/>
+<img src="https://github.com/user-attachments/assets/cb05833f-58e4-4fab-92f9-558f2a4c54fa"/>
+<img src="https://github.com/user-attachments/assets/a76fc557-7ed2-40ed-9676-6564e1fab068"/>
+<br/> The UI is now accessable with the password admin!<br/>
 
 
 
